@@ -12,3 +12,4 @@ Book.prototype.info = function (title, author,pages,read){
         { let readYet= "was not read."}
     console.log("The"+ this.title + "by" + this.author + "has" + this.pages + "pages" + readYet)
 }
+
