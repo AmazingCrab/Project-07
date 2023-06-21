@@ -21,10 +21,7 @@ header{
     border-radius: 8px;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+#main{
     background-color:rgb(48, 129, 145);
     height: 72vh;
     margin: 2vh 4vw 4vh 4vw;
@@ -33,12 +30,11 @@ main{
 
 #addButton{
     font-size: 32px;
-    margin-top: 32px;
     background-color:#1220df;
     border-style: none;
     border-radius: 8px;
     padding: 8px 16px;
-    transition: 250ms all;
+    transition: 400ms all;
 }
 #addButton:hover{
     border: 1px solid #fff;
@@ -46,7 +42,7 @@ main{
 }
 #addButton:active{
     color: #1220df;
-    scale: 0.9;
+    scale: 0.98;
     background-color: #fff;
 }
 
@@ -58,4 +54,10 @@ main{
     display: inline-block;
     color: #f8fc0d;
     margin-right: 8px;
+}
+#addButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16vh;
 }
