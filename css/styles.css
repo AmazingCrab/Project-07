@@ -34,12 +34,28 @@ main{
 #addButton{
     font-size: 32px;
     margin-top: 32px;
-    background-color: rgb(18, 83, 221);
+    background-color:#1220df;
     border-style: none;
     border-radius: 8px;
     padding: 8px 16px;
+    transition: 250ms all;
 }
 #addButton:hover{
     border: 1px solid #fff;
-    scale: 1.1;
+    scale: 1.02;
+}
+#addButton:active{
+    color: #1220df;
+    scale: 0.9;
+    background-color: #fff;
+}
+
+#addButton>span{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 3px solid #f8fc0d;;
+    display: inline-block;
+    color: #f8fc0d;
+    margin-right: 8px;
 }
