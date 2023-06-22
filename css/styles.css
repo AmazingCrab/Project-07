@@ -32,7 +32,7 @@ header{
     align-items: center;
     flex-direction: column;
 }/*Main Structure finish here*/
-#addButton{
+#addButton , .submitButton{
     font-size: 32px;
     background-color:#1220df;
     border-style: none;
@@ -41,11 +41,11 @@ header{
     transition: 400ms all;
     font-weight: 600;
 }
-#addButton:hover{
+#addButton:hover , .submitButton:hover{
     border: 1px solid #fff;
     scale: 1.02;
 }
-#addButton:active{
+#addButton:active , .submitButton:active{
     color: #1220df;
     scale: 0.98;
     background-color: #fff;
@@ -60,7 +60,7 @@ header{
     color: #f8fc0d;
     margin-right: 8px;
 }
-#addButtonContainer{
+#addButtonContainer , .submitButtonContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +106,6 @@ input{
 }
 input:focus{
     outline: none;
-}
+}/*Form Finish Here*/
 
 
