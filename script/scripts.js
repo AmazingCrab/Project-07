@@ -27,6 +27,7 @@ function formUiMaker() {
     const readInput = document.createElement("input");
     const submitButtonContainer = document.createElement("div")
     const submitButton = document.createElement("button");
+    const addButtonContainer = document.getElementById("addButtonContainer");
     titleLabel.textContent = "Title:";
     authorLabel.textContent = "Author:";
     pagesLabel.textContent = "Pages:";
@@ -47,7 +48,8 @@ function formUiMaker() {
     submitButtonContainer.appendChild(submitButton);
     formContainer.classList.add("formStyle");
     readInput.setAttribute("type", "checkbox");
-    submitButtonContainer.classList.add("submitButtonContainer")
-    submitButton.classList.add("submitButton")
-    submitButton.textContent = "Submit"
+    submitButtonContainer.classList.add("submitButtonContainer");
+    submitButton.classList.add("submitButton");
+    submitButton.textContent = "Submit";
+    addButtonContainer.removeChild(addButton);
 }
