@@ -16,7 +16,8 @@ const mainContainer = document.getElementById("main")
 document.getElementById("addButton").addEventListener("click", formUiMaker)
 
 function formUiMaker() {
-    const formContainer = document.createElement("div");
+    const formContainer = document.createElement("form");
+    const formContainerBackGround = document.createElement("div");
     const titleLabel = document.createElement("label");
     const titleInput = document.createElement("input");
     const authorLabel = document.createElement("label");
@@ -36,20 +37,32 @@ function formUiMaker() {
     authorInput.setAttribute("placeholder", "Who wrote the book?");
     pagesInput.setAttribute("placeholder", "How many ?")
     mainContainer.appendChild(formContainer);
-    formContainer.appendChild(titleLabel);
-    formContainer.appendChild(titleInput)
-    formContainer.appendChild(authorLabel);
-    formContainer.appendChild(authorInput);
-    formContainer.appendChild(pagesLabel);
-    formContainer.appendChild(pagesInput);
-    formContainer.appendChild(readLabel);
-    formContainer.appendChild(readInput);
-    mainContainer.appendChild(submitButtonContainer);
+    formContainer.appendChild(formContainerBackGround)
+    formContainerBackGround.appendChild(titleLabel);
+    formContainerBackGround.appendChild(titleInput)
+    formContainerBackGround.appendChild(authorLabel);
+    formContainerBackGround.appendChild(authorInput);
+    formContainerBackGround.appendChild(pagesLabel);
+    formContainerBackGround.appendChild(pagesInput);
+    formContainerBackGround.appendChild(readLabel);
+    formContainerBackGround.appendChild(readInput);
+    formContainer.appendChild(submitButtonContainer);
     submitButtonContainer.appendChild(submitButton);
-    formContainer.classList.add("formStyle");
+    formContainerBackGround.classList.add("formStyle");
     readInput.setAttribute("type", "checkbox");
     submitButtonContainer.classList.add("submitButtonContainer");
     submitButton.classList.add("submitButton");
+    submitButton.setAttribute("type", "submit")
     submitButton.textContent = "Submit";
     main.removeChild(addButtonContainer)
 }
+
+
+/*function submit*/
+submitButton.addEventListener("click", submitRemoveUi);
+function submitRemoveUi (e){
+    e.preventDefault();
+    mainContainer.removeChild(formContainer)
+}
+
+
