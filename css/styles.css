@@ -108,5 +108,21 @@ input{
 input:focus{
     outline: none;
 }/*Form Finish Here*/
-
+#bookList{
+    width: 100%;
+}
+#bookList > ul{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr ;
+    background-color: #e4221f;
+    justify-items: start;
+    align-content: center;
+    justify-items: stretch;
+    margin: 0 4px;
+}
+#bookList >ul >li{
+    border:1px solid #444242;
+    font-size: 18px;
+    padding: 8px;
+    }
 
