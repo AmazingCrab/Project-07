@@ -32,6 +32,7 @@ const addButtonContainer = document.getElementById("addButtonContainer")
 
 /*function add book UI*/
 const mainContainer = document.getElementById("main")
+const bookList =document.getElementById("bookList")
 document.getElementById("addButton").addEventListener("click", formUi)
 
 function formUi() {
@@ -52,13 +53,15 @@ function formUi() {
     authorInput.setAttribute("type", "text");
     pagesInput.setAttribute("type", "number");
     readInput.setAttribute("type", "checkbox");
-    submitButton.setAttribute("value", "submit")
-    submitButton.setAttribute("type", "submit")
+    submitButton.setAttribute("value", "submit");
+    submitButton.setAttribute("type", "submit");
+    bookList.classList.remove("visible");
+    bookList.classList.add("hidden");
 
     mainContainer.appendChild(formContainer);
-    formContainer.appendChild(formContainerBackGround)
+    formContainer.appendChild(formContainerBackGround);
     formContainerBackGround.appendChild(titleLabel);
-    formContainerBackGround.appendChild(titleInput)
+    formContainerBackGround.appendChild(titleInput);
     formContainerBackGround.appendChild(authorLabel);
     formContainerBackGround.appendChild(authorInput);
     formContainerBackGround.appendChild(pagesLabel);
@@ -71,13 +74,15 @@ function formUi() {
     formContainerBackGround.classList.add("formStyle");
     submitButtonContainer.classList.add("submitButtonContainer");
     submitButton.classList.add("submitButton");
-    main.removeChild(addButtonContainer)
+    main.removeChild(addButtonContainer);
+    main.removeChild(bookList)
 
     formContainer.addEventListener("submit", submit);
     /*function submit*/
     function submit (e){
         e.preventDefault();{
         main.appendChild(addButtonContainer);
+        main.appendChild(bookList);
         mainContainer.removeChild(formContainer);
         read= readInput.checked;
         const addBook = new book(titleInput.value , authorInput.value, pagesInput.value,read );
@@ -85,3 +90,5 @@ function formUi() {
     }
 }
 }
+
+function addToBookList (){};
