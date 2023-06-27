@@ -136,12 +136,13 @@ input:focus {
     grid-template-columns: 3fr 2fr 1fr 1fr 6ch 6ch;
     align-content: center;
     justify-content: center;
-    margin: 0 4px 8px 0;
+    margin: 0 4px 8px 4px;
     color: #444242;
     border-radius: 8px;
 }
 
 #bookList>ul>li {
+    border: 1px solid #fff;
     font-size: 18px;
     padding: 8px;
     color: #fff;
@@ -158,29 +159,23 @@ input:focus {
 #bookList>ul>li:nth-child(4) {
     border-radius: 0 8px 8px 0;
 }
-
+#bookList>ul>li:nth-child(5){
+    margin-left: 16px;
+}
 #bookList>ul>li:nth-child(5), #bookList>ul>li:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
-    padding: 8px 12px;
-    font-weight: 800;;
     align-self: center;
     justify-self: center;
-    border: 2px solid;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    font-weight: 800;;
+    border: 1px solid;
     background-color: #e4221f;
     transition: 500ms all;
-}
-#bookList > ul > li:nth-child(6) {
-    position: relative;
-}
-#bookList > ul > li:nth-child(6)>input{
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    height: 20px;
-    width: 20px;
 }
 
 #bookList>ul>li:nth-child(5):hover, #bookList > ul > li:nth-child(6):hover {
