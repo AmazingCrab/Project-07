@@ -142,28 +142,23 @@ input:focus {
     margin: 0 4px;
     color: #444242;
     border-radius: 8px;
+    margin-bottom: 4px;
 }
 
 #bookList>ul>li {
     font-size: 18px;
     padding: 8px;
     color: #fff;
+    box-shadow: 0 0 0 1px #fff;
+    margin: 0 0 1px 1px; 
 }
 
-#bookList>ul:first-child>li:nth-child(1) {
-    border: 1px solid #fff;
-    border-right: none;
+#bookList>ul>li:first-child {
     border-radius: 8px 0 0 8px;
 }
 
-#bookList>ul:first-child>li:nth-child(2),
-#bookList>ul:first-child>li:nth-child(3) {
-    border: 1px solid #fff;
-}
 
-#bookList>ul:first-child>li:nth-child(4) {
-    border: 1px solid #fff;
-    border-right: none;
+#bookList>ul>li:nth-child(4) {
     border-radius: 0 8px 8px 0;
 }
 
