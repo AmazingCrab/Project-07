@@ -136,10 +136,10 @@ input:focus {
     display: grid;
     grid-template-columns: 3fr 2fr 1fr 1fr 6ch;
     align-content: center;
-    margin: 0 4px;
+    justify-content: center;
+    margin: 0 4px 8px 0;
     color: #444242;
     border-radius: 8px;
-    margin-bottom: 4px;
 }
 
 #bookList>ul>li {
@@ -153,6 +153,7 @@ input:focus {
 
 #bookList>ul>li:first-child {
     border-radius: 8px 0 0 8px;
+    margin-left: 8px;
 }
 
 
