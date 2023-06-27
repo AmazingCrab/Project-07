@@ -109,6 +109,8 @@ function addToBookList (){ /*This makes the bookList every time*/
     const authorLi = document.createElement("li");
     const pagesLi = document.createElement("li");
     const readLi = document.createElement("li");
+    const readSwitchLi = document.createElement("li")
+    const readSwitchInput = document.createElement("input")
     const deleteBook = document.createElement("li")
     bookList.appendChild(ulBook);
     ulBook.appendChild(titleLi);
@@ -116,10 +118,13 @@ function addToBookList (){ /*This makes the bookList every time*/
     ulBook.appendChild(pagesLi);
     ulBook.appendChild(readLi);
     ulBook.appendChild(deleteBook);
+    ulBook.appendChild(readSwitchLi);
+    readSwitchLi.appendChild(readSwitchInput);
     titleLi.textContent = books[n].title;
     authorLi.textContent = books[n].author;
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
+    readSwitchInput.setAttribute("type", "checkbox")
     deleteBook.textContent = "X";
     deleteBook.setAttribute("data",n)
     ulBook.setAttribute("data", `ulBook${n}`)
