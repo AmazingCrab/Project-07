@@ -121,4 +121,19 @@ function addToBookList (){ /*This makes the bookList every time*/
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
     deleteBook.textContent = "X";
+    deleteBook.setAttribute("data",n)
+    ulBook.setAttribute("data", `ulBook${n}`)
 };
+bookList.addEventListener("click", deleteBook);/*Function Delete*/
+function deleteBook(e){
+    let dataNumber = e.target.closest("li").getAttribute("data")
+    console.log(dataNumber)
+    if (!dataNumber)
+    {console.log("nothing")}
+    else{
+        console.log(dataNumber)
+        let deleteThisBook = document.querySelectorAll(`[data="ulBook${dataNumber}"]`);/*This get the Ul Node*/
+        bookList.removeChild(deleteThisBook[0])
+        delete books[dataNumber]
+    }
+}
