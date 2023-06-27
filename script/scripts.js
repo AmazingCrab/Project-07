@@ -1,4 +1,5 @@
 let title, author, pages, read, readYet;
+let  n = -1; /*book counter*/
 const books = [];
 /*f() constructors*/
 class book {
@@ -15,7 +16,7 @@ class book {
                 {this.readYet = "NO";}
         }
 }
-
+/*const for form*/ 
 const titleInput = document.createElement("input");
 const authorInput = document.createElement("input");
 const pagesInput = document.createElement("input");
@@ -30,10 +31,13 @@ const submitButtonContainer = document.createElement("div")
 const submitButton = document.createElement("button");
 const addButtonContainer = document.getElementById("addButtonContainer")
 
-/*function add book UI*/
-const mainContainer = document.getElementById("main")
+/*const for bookList*/
 const bookList =document.getElementById("bookList")
-document.getElementById("addButton").addEventListener("click", formUi)
+
+
+/*function add book UI*/
+const mainContainer = document.getElementById("main");
+document.getElementById("addButton").addEventListener("click", formUi);
 
 function formUi() {
     titleLabel.textContent = "Title:";
@@ -55,8 +59,6 @@ function formUi() {
     readInput.setAttribute("type", "checkbox");
     submitButton.setAttribute("value", "submit");
     submitButton.setAttribute("type", "submit");
-    bookList.classList.remove("visible");
-    bookList.classList.add("hidden");
 
     mainContainer.appendChild(formContainer);
     formContainer.appendChild(formContainerBackGround);
@@ -88,7 +90,27 @@ function formUi() {
         const addBook = new book(titleInput.value , authorInput.value, pagesInput.value,read );
         books.push(addBook);
     }
-}
+    addToBookList();
 }
 
-function addToBookList (){};
+}
+
+function addToBookList (){
+    n=n+1;
+    const ulBook= document.createElement("ul");
+    const titleLi = document.createElement("li");
+    const authorLi = document.createElement("li");
+    const pagesLi = document.createElement("li");
+    const readLi = document.createElement("li");
+    bookList.appendChild(ulBook);
+    ulBook.appendChild(titleLi);
+    ulBook.appendChild(authorLi);
+    ulBook.appendChild(pagesLi);
+    ulBook.appendChild(readLi);
+    titleLi.textContent = books[n].title;
+    console.log(n);
+    console.log(books[n].title)
+    authorLi.textContent = books[n].author;
+    pagesLi.textContent = books[n].pages;
+    readLi.textContent = books[n].readYet;
+};
