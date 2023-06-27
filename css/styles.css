@@ -65,7 +65,6 @@ header {
     line-height: 30px;
     border-radius: 50%;
     border: 3px solid #f8fc0d;
-    ;
     display: inline-block;
     color: #f8fc0d;
     margin-right: 8px;
@@ -168,17 +167,20 @@ input:focus {
     justify-self: center;
     border: 2px solid;
     background-color: #e4221f;
+    transition: 500ms all;
 }
 
 #bookList>ul>li:nth-child(5):hover {
     color:#e4221f;
     background-color: #fff;
     border-color: #e4221f;
+    scale: 1.04;
 }
 
 #bookList>ul>li:nth-child(5):active {
     background-color: #e4221f;
     color: #fff;
+    scale: 0.98;
 }
 
 #bookList>ul:first-child>li {
