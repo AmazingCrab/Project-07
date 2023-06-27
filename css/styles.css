@@ -134,11 +134,8 @@ input:focus {
 
 #bookList>ul {
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr;
-    background-color: #c5d4d8;
-    justify-items: start;
+    grid-template-columns: 3fr 2fr 1fr 1fr 6ch;
     align-content: center;
-    justify-items: stretch;
     margin: 0 4px;
     color: #444242;
     border-radius: 8px;
@@ -151,6 +148,7 @@ input:focus {
     color: #fff;
     box-shadow: 0 0 0 1px #fff;
     margin: 0 0 1px 1px; 
+    background-color: #c5d4d8;
 }
 
 #bookList>ul>li:first-child {
@@ -160,6 +158,14 @@ input:focus {
 
 #bookList>ul>li:nth-child(4) {
     border-radius: 0 8px 8px 0;
+}
+#bookList>ul>li:nth-child(5) {
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 800;;
+    align-self: center;
+    justify-self: center;
+    background-color: #e4221f;
 }
 
 #bookList>ul:first-child>li {
