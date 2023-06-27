@@ -1,5 +1,5 @@
 let title, author, pages, read, readYet;
-let  n = -1; /*book counter*/
+let  n = -1; /*book counter+Submit*/
 const books = [];
 /*f() constructors*/
 class book {
@@ -17,29 +17,30 @@ class book {
         }
 }
 /*const for form*/ 
-const titleInput = document.createElement("input");
-const authorInput = document.createElement("input");
-const pagesInput = document.createElement("input");
-const readInput = document.createElement("input");    
-const formContainer = document.createElement("form");
-const formContainerBackGround = document.createElement("div");
-const titleLabel = document.createElement("label");
-const authorLabel = document.createElement("label");
-const pagesLabel = document.createElement("label");
-const readLabel = document.createElement("label");
-const submitButtonContainer = document.createElement("div")
-const submitButton = document.createElement("button");
-const addButtonContainer = document.getElementById("addButtonContainer")
 
+const addButtonContainer = document.getElementById("addButtonContainer")
+const readInput = document.createElement("input");    
 /*const for bookList*/
 const bookList =document.getElementById("bookList")
-
 
 /*function add book UI*/
 const mainContainer = document.getElementById("main");
 document.getElementById("addButton").addEventListener("click", formUi);
 
 function formUi() {
+    const titleInput = document.createElement("input");/*this inputs need to be here because they need to be erased every time*/
+    const authorInput = document.createElement("input");
+    const pagesInput = document.createElement("input");
+
+    const formContainer = document.createElement("form");
+    const formContainerBackGround = document.createElement("div");
+    const titleLabel = document.createElement("label");
+    const authorLabel = document.createElement("label");
+    const pagesLabel = document.createElement("label");
+    const readLabel = document.createElement("label");
+    const submitButtonContainer = document.createElement("div")
+    const submitButton = document.createElement("button");
+
     titleLabel.textContent = "Title:";
     authorLabel.textContent = "Author:";
     pagesLabel.textContent = "Pages:";
@@ -53,6 +54,7 @@ function formUi() {
     authorInput.setAttribute("name" , "author");
     pagesInput.setAttribute ("name" , "pages");
     readInput.setAttribute  ("name" , "read");
+
     titleInput.setAttribute("type", "Text");
     authorInput.setAttribute("type", "text");
     pagesInput.setAttribute("type", "number");
@@ -82,19 +84,25 @@ function formUi() {
     formContainer.addEventListener("submit", submit);
     /*function submit*/
     function submit (e){
-        e.preventDefault();{
-        main.appendChild(addButtonContainer);
-        main.appendChild(bookList);
+        if((titleInput.value.length === 0)|| (authorInput.value.length === 0)||(pagesInput.value.length === 0)){
+            e.preventDefault();
+            alert("Please Fill the Fields");
+            return;
+        }
+        else{   
+            e.preventDefault();
+            main.appendChild(addButtonContainer);
+            main.appendChild(bookList);
+            const addBook = new book(titleInput.value , authorInput.value, pagesInput.value, readInput.checked);
+            readInput.checked = false; /*This restores check position*/
+            books.push(addBook);
+            addToBookList();
+        }
         mainContainer.removeChild(formContainer);
-        const addBook = new book(titleInput.value , authorInput.value, pagesInput.value,readInput.checked );
-        books.push(addBook);
     }
-    addToBookList();
 }
 
-}
-
-function addToBookList (){
+function addToBookList (){ /*This makes the bookList every time*/
     n=n+1;
     const ulBook= document.createElement("ul");
     const titleLi = document.createElement("li");
@@ -107,8 +115,6 @@ function addToBookList (){
     ulBook.appendChild(pagesLi);
     ulBook.appendChild(readLi);
     titleLi.textContent = books[n].title;
-    console.log(n);
-    console.log(books[n].title)
     authorLi.textContent = books[n].author;
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
