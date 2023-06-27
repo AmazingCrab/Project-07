@@ -133,7 +133,7 @@ input:focus {
 
 #bookList>ul {
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr 6ch;
+    grid-template-columns: 3fr 2fr 1fr 1fr 6ch 6ch;
     align-content: center;
     justify-content: center;
     margin: 0 4px 8px 0;
@@ -159,8 +159,11 @@ input:focus {
     border-radius: 0 8px 8px 0;
 }
 
-#bookList>ul>li:nth-child(5) {
+#bookList>ul>li:nth-child(5), #bookList>ul>li:nth-child(6) {
+    box-sizing: border-box;
     border-radius: 8px;
+    width: 40px;
+    height: 40px;
     padding: 8px 12px;
     font-weight: 800;;
     align-self: center;
@@ -169,15 +172,25 @@ input:focus {
     background-color: #e4221f;
     transition: 500ms all;
 }
+#bookList > ul > li:nth-child(6) {
+    position: relative;
+}
+#bookList > ul > li:nth-child(6)>input{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+}
 
-#bookList>ul>li:nth-child(5):hover {
+#bookList>ul>li:nth-child(5):hover, #bookList > ul > li:nth-child(6):hover {
     color:#e4221f;
     background-color: #fff;
     border-color: #e4221f;
     scale: 1.04;
 }
 
-#bookList>ul>li:nth-child(5):active {
+#bookList>ul>li:nth-child(5):active, #bookList > ul > li:nth-child(6):active {
     background-color: #e4221f;
     color: #fff;
     scale: 0.98;
