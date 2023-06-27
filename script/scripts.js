@@ -10,7 +10,7 @@ class book {
         this.info();
     }
         info() {
-            if (read === true) 
+            if (readInput.checked === true) 
                 {this.readYet = "YES";}
             else 
                 {this.readYet = "NO";}
@@ -86,8 +86,7 @@ function formUi() {
         main.appendChild(addButtonContainer);
         main.appendChild(bookList);
         mainContainer.removeChild(formContainer);
-        read= readInput.checked;
-        const addBook = new book(titleInput.value , authorInput.value, pagesInput.value,read );
+        const addBook = new book(titleInput.value , authorInput.value, pagesInput.value,readInput.checked );
         books.push(addBook);
     }
     addToBookList();
