@@ -109,13 +109,16 @@ function addToBookList (){ /*This makes the bookList every time*/
     const authorLi = document.createElement("li");
     const pagesLi = document.createElement("li");
     const readLi = document.createElement("li");
+    const deleteBook = document.createElement("li")
     bookList.appendChild(ulBook);
     ulBook.appendChild(titleLi);
     ulBook.appendChild(authorLi);
     ulBook.appendChild(pagesLi);
     ulBook.appendChild(readLi);
+    ulBook.appendChild(deleteBook);
     titleLi.textContent = books[n].title;
     authorLi.textContent = books[n].author;
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
+    deleteBook.textContent = "X";
 };
