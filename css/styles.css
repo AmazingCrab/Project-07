@@ -177,15 +177,19 @@ input:focus {
     background-color: #e4221f;
     transition: 500ms all;
 }
+#bookList>ul>li:nth-child(6)>input{
+    padding: 40px;
+    justify-content: center;
 
-#bookList>ul>li:nth-child(5):hover, #bookList > ul > li:nth-child(6):hover {
+}
+#bookList>ul>li:nth-child(5):hover, #bookList > ul > li:nth-child(6)>input:hover {
     color:#e4221f;
     background-color: #fff;
     border-color: #e4221f;
     scale: 1.04;
 }
 
-#bookList>ul>li:nth-child(5):active, #bookList > ul > li:nth-child(6):active {
+#bookList>ul>li:nth-child(5):active, #bookList > ul > li:nth-child(6)>input:active {
     background-color: #e4221f;
     color: #fff;
     scale: 0.98;
