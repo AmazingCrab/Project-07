@@ -18,7 +18,6 @@ class book {
         }
 }
 /*const for form*/ 
-
 const addButtonContainer = document.getElementById("addButtonContainer")
 const readInput = document.createElement("input");    
 /*const for bookList*/
@@ -126,11 +125,11 @@ function addToBookList (){ /*This makes the bookList every time*/
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
     readSwitchInput.setAttribute("type", "checkbox")
-    readSwitchInput.setAttribute("data-checkInput", `check${n}`)
+    readSwitchInput.setAttribute("data-checkInput", n)
     readSwitchLi.setAttribute("data-check", `check${n}`)
     readLi.setAttribute("data", `read${n}`)
     deleteBook.textContent = "X";
-    deleteBook.setAttribute("data",n)
+    deleteBook.setAttribute("data-Book",n)
     ulBook.setAttribute("data", `ulBook${n}`)
     if(books[n].readYet === "YES")
         readSwitchInput.checked = true;
@@ -140,10 +139,24 @@ function addToBookList (){ /*This makes the bookList every time*/
 
 
 bookList.addEventListener("click", deleteBook);/*Function Delete*/
-function deleteBook(e){
-    let dataNumber = e.target.closest("li").getAttribute("data")
+function deleteBook(e){  
+    e.preventDefault();
+    let dataNumber = e.target.closest("li").getAttribute("data-Book")
         let deleteThisBook = document.querySelectorAll(`[data="ulBook${dataNumber}"]`);/*This get the Ul Node*/
         bookList.removeChild(deleteThisBook[0])
         delete books[dataNumber]
     }
-    
+
+bookList.addEventListener("click", toggleRead);/*Function Delete*/
+function toggleRead(e){  
+    e.preventDefault();
+    let dataNumber = e.target.closest("input").getAttribute("data-checkInput")
+        let toggleThisBook = document.querySelectorAll(`[data="read${dataNumber}"]`);/*This get the Ul Node*/
+        let textBook= toggleThisBook[0].textContent
+        if(textBook === "YES"){
+            toggleThisBook[0].textContent="NO"
+        }
+        else{
+            toggleThisBook[0].textContent="YES"
+        }
+}
