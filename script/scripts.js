@@ -11,7 +11,8 @@ class book {
     }
         info() {
             if (readInput.checked === true) 
-                {this.readYet = "YES";}
+                {this.readYet = "YES";
+            }
             else 
                 {this.readYet = "NO";}
         }
@@ -94,7 +95,7 @@ function formUi() {
             main.appendChild(addButtonContainer);
             main.appendChild(bookList);
             const addBook = new book(titleInput.value , authorInput.value, pagesInput.value, readInput.checked);
-            readInput.checked = false; /*This restores check position*/
+            readInput.checked=false; /*This restores check position*/
             books.push(addBook);
             addToBookList();
         }
@@ -125,16 +126,26 @@ function addToBookList (){ /*This makes the bookList every time*/
     pagesLi.textContent = books[n].pages;
     readLi.textContent = books[n].readYet;
     readSwitchInput.setAttribute("type", "checkbox")
+    readSwitchInput.setAttribute("data-checkInput", `check${n}`)
+    readSwitchLi.setAttribute("data-check", `check${n}`)
+    readLi.setAttribute("data", `read${n}`)
     deleteBook.textContent = "X";
     deleteBook.setAttribute("data",n)
     ulBook.setAttribute("data", `ulBook${n}`)
-};
+    let checkReadInput = document.querySelectorAll(`[data-checkInput="check${n}"]`);
+    if(books[n].readYet === "YES")
+        checkReadInput[0].checked = true;
+    else 
+        checkReadInput[0].checked = false;
+}
+
+
 bookList.addEventListener("click", deleteBook);/*Function Delete*/
 function deleteBook(e){
     let dataNumber = e.target.closest("li").getAttribute("data")
     console.log(dataNumber)
     if (!dataNumber)
-    {console.log("nothing")}
+        {console.log("nothing")}
     else{
         console.log(dataNumber)
         let deleteThisBook = document.querySelectorAll(`[data="ulBook${dataNumber}"]`);/*This get the Ul Node*/
