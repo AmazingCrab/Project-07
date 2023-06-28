@@ -132,24 +132,18 @@ function addToBookList (){ /*This makes the bookList every time*/
     deleteBook.textContent = "X";
     deleteBook.setAttribute("data",n)
     ulBook.setAttribute("data", `ulBook${n}`)
-    let checkReadInput = document.querySelectorAll(`[data-checkInput="check${n}"]`);
     if(books[n].readYet === "YES")
-        checkReadInput[0].checked = true;
+        readSwitchInput.checked = true;
     else 
-        checkReadInput[0].checked = false;
+        readSwitchInput.checked = false;
 }
 
 
 bookList.addEventListener("click", deleteBook);/*Function Delete*/
 function deleteBook(e){
     let dataNumber = e.target.closest("li").getAttribute("data")
-    console.log(dataNumber)
-    if (!dataNumber)
-        {console.log("nothing")}
-    else{
-        console.log(dataNumber)
         let deleteThisBook = document.querySelectorAll(`[data="ulBook${dataNumber}"]`);/*This get the Ul Node*/
         bookList.removeChild(deleteThisBook[0])
         delete books[dataNumber]
     }
-}
+    
