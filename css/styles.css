@@ -201,7 +201,7 @@ input:focus {
     text-transform: uppercase;
 }/*BookList Finish Here*/
 
-#section > ul:first-child> {
+#section > ul:first-child {
     margin-bottom:16px;
     box-sizing: content-box;
 }
