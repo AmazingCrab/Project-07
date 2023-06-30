@@ -141,6 +141,7 @@ input:focus {
     border-radius: 8px;
 }
 
+
 #bookList>ul>li {
     border: 1px solid #fff;
     font-size: 18px;
@@ -199,3 +200,8 @@ input:focus {
     font-weight: 800;
     text-transform: uppercase;
 }/*BookList Finish Here*/
+
+#section > ul:first-child> {
+    margin-bottom:16px;
+    box-sizing: content-box;
+}
